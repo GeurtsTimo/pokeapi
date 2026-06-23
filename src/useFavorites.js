@@ -43,14 +43,6 @@ export class FavoriteService {
   isFavorite(pokemonId) {
     return this.storage.value.items.includes(pokemonId);
   }
-
-  removeFavorite(pokemonId) {
-    const index = this.storage.value.items.indexOf(pokemonId);
-    if (index !== -1) {
-      this.storage.value.items.splice(index, 1);
-      this.saveToStorage();
-    }
-  }
 }
 
 // Singleton — import this instead of calling new FavoriteService()
